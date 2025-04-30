@@ -1,0 +1,20 @@
+{
+  "login": {
+    "email": "Email",
+    "error": "Error",
+    "password": "Password",
+    "login": "Login"
+  },
+  "navbar" : {
+    "memos" : "Memos",
+    "leads" : "Leads",
+    "admin" : "Admin",
+    "logout": "Logout"
+  },
+  "statusbar": {
+    "leads": "Leads",
+    "emails": "Emails",
+    "lists": "Lists",
+    "agents": "Agents"
+  }
+}

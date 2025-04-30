@@ -1,0 +1,20 @@
+{
+  "login" : {
+    "email" : "Correo electrónico",
+    "error" : "Error",
+    "password" : "Contraseña",
+    "login" : "Iniciar sesión"
+  },
+  "navbar" : {
+    "memos" : "Memos",
+    "leads" : "Prospectos",
+    "admin" : "Admin",
+    "logout": "Salir"
+  },
+  "statusbar": {
+    "leads": "Leads",
+    "emails": "Correos",
+    "lists": "Listas",
+    "agents": "Agentes"
+  }
+}

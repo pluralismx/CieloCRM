@@ -8,3 +8,38 @@
     --color-shadows: #021e20;
     --color-silver: #AAAAAA;
 }
+
+.btn-basic {
+    background-color: var(--color-basic);
+    color: var(--color-primary);
+    border-radius: 6px;
+    padding: 2px 8px;
+}
+
+.btn-basic:hover {
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-basic);
+    border-radius: 6px;
+    padding: 2px 8px;
+}
+
+.btn-primary:hover {
+    cursor: pointer;
+}
+
+.btn-warn {
+    background-color: var(--color-accent);
+    color: var(--color-warn);
+    border-radius: 6px;
+    padding: 2px 8px;
+}
+
+.btn-warn:hover {
+    cursor: pointer;
+}
+
+

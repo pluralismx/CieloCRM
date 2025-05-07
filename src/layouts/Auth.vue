@@ -6,7 +6,7 @@
       <div class="flex flex-col gap-2 mb-4">
         <label class="text-basic">{{ $t('login.email')}}</label>
         <input
-            v-model="data.email"
+            v-model="form.email"
             class="bg-basic rounded-sm p-2"
         />
         <span class="text-warn text-sm">{{ $t('login.error')}}</span>
@@ -14,47 +14,42 @@
       <div class="flex flex-col gap-2 mb-10">
         <label class="text-basic">{{ $t('login.password')}}</label>
         <input
-            v-model="data.password"
+            v-model="form.password"
             class="bg-basic rounded-sm p-2"
         />
         <span class="text-warn text-sm">{{ $t('login.error')}}</span>
       </div>
       <button
-          @click="login()"
+          @click="handleLogin"
           class="bg-primary p-2 rounded-sm text-basic hover:cursor-pointer"
       >
-        {{ $t('login.login')}}
+        {{ $t('login.login') }}
       </button>
     </div>
   </div>
 </template>
 <script>
-import api from '@/services/axios.js'
+import { useAuthStore } from '@/stores/auth'
+
 export default {
   name: 'Auth',
   data() {
     return {
-      data: {
-        "email": "gerardotopete7@gmail.com",
-        "password": "12345678",
-      }
+      form: {
+        email: 'gerardotopete7@gmail.com',
+        password: '12345678',
+      },
+      auth: useAuthStore()
     }
   },
   methods: {
-    login: async function () {
-      // Obtener los datos
-      let data = JSON.stringify(this.data);
-
-      // Iniciar sesion
-      try{
-        const response =  await api.post('/login', data)
-        if(response.data.status === "success"){
-          this.$emit('login-success');
-        }
+    async handleLogin() {
+      try {
+        await this.auth.login(this.form)
       } catch (error) {
         console.log(error)
       }
-    },
+    }
   }
 }
 </script>

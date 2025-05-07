@@ -1,31 +1,53 @@
 <template>
   <Auth
-    v-if="!isLoggedIn"
-    @login-success="isLoggedIn = true"
+      v-if="!isLoggedIn && !isAppLoading"
   />
   <Dashboard
-    v-if="isLoggedIn"
+      v-if="isLoggedIn && !isAppLoading"
   />
+  <div
+      v-if="isLoggedIn && isAppLoading"
+      class="h-[100vh] w-[100vw] bg-shadows flex items-center justify-center text-basic"
+  >
+    <p class="text-[32px]">{{ $t('loadingScreen.loading') }}</p>
+  </div>
 </template>
-<script>
-  import Auth from '@/layouts/Auth.vue'
-  import Dashboard from '@/layouts/Dashboard.vue'
-  export default {
-    name: 'App',
-    components: {
-      Auth,
-      Dashboard
-    },
-    data() {
-      return {
-        "isLoggedIn" : false,
-      }
-    },
-    methods: {
-      changeLanguage: function (lang) {
-        this.$i18n.locale = lang
-      }
-    }
 
-  }
+<script>
+import Auth from '@/layouts/Auth.vue'
+import Dashboard from '@/layouts/Dashboard.vue'
+import { useAuthStore } from '@/stores/auth.js'
+import { useListsStore } from '@/stores/lists.js'
+
+export default {
+  name: 'App',
+  components: {
+    Auth,
+    Dashboard
+  },
+  data() {
+    return {
+      auth: useAuthStore(),
+      lists: useListsStore(),
+      isAppLoading: false
+    }
+  },
+  computed: {
+    isLoggedIn() {
+      return !!this.auth.user
+    }
+  },
+  watch: {
+    async isLoggedIn() {
+        this.isAppLoading = true
+        await this.lists.fetchLists()
+        this.isAppLoading = false
+    }
+  },
+  methods: {
+    changeLanguage(lang) {
+      this.$i18n.locale = lang
+    }
+  },
+}
 </script>

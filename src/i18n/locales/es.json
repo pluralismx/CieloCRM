@@ -5,11 +5,23 @@
     "password" : "Contraseña",
     "login" : "Iniciar sesión"
   },
+  "loadingScreen": {
+    "loading" : "Cargando sus datos..."
+  },
   "navbar" : {
+    "list" : "Lista",
+    "listSelectPlaceholder" : "Seleccione una lista",
     "memos" : "Memos",
     "leads" : "Prospectos",
-    "admin" : "Admin",
-    "logout": "Salir"
+    "email" : "E-mail",
+    "logout": "Salir",
+    "settings" : "Preferencias"
+  },
+  "adminbar" : {
+    "funnels" : "Embudos",
+    "friends" : "Amigos",
+    "products" : "Productos",
+    "account" : "Cuenta"
   },
   "statusbar": {
     "leads": "Leads",

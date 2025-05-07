@@ -5,11 +5,23 @@
     "password": "Password",
     "login": "Login"
   },
+  "loadingScreen": {
+    "loading" : "Loading your data..."
+  },
   "navbar" : {
+    "list" : "List",
+    "listSelectPlaceholder" : "Select a list",
     "memos" : "Memos",
     "leads" : "Leads",
     "admin" : "Admin",
-    "logout": "Logout"
+    "logout": "Logout",
+    "settings" : "Settings"
+  },
+  "adminbar" : {
+    "funnels" : "Funnels",
+    "friends" : "Friends",
+    "products" : "Products",
+    "account" : "Account"
   },
   "statusbar": {
     "leads": "Leads",

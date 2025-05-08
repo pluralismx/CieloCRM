@@ -26,7 +26,7 @@
 
     <!-- User Menu -->
     <ul class="flex items-center justify-end gap-8 w-1/2">
-      <li>
+      <li @click="layoutStore.setActiveModule('settings')">
         {{ $t('navbar.settings') }}
       </li>
       <li class="hover:cursor-pointer" @click="handleLogOut">

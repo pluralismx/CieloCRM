@@ -1,9 +1,11 @@
 <template>
-  <main class="bg-white flex flex-col h-[100vh]">
+  <main class="bg-basic-hover flex flex-col h-[100vh]">
     <Navbar/>
-    <section class="h-0 flex-1 flex flex-row justify-between">
+    <section class="h-0 flex-1 flex flex-row">
       <Memos v-show="sidebar"/>
-      <component :is="activeModule" />
+      <div class="p-8 flex-1">
+        <component :is="activeModule" />
+      </div>
       <Adminbar/>
     </section>
     <Statusbar/>
@@ -19,14 +21,14 @@ import Adminbar from '@/components/Adminbar.vue'
 import Statusbar from "@/components/Statusbar.vue"
 
 // Modules
-import Admin from "@/modules/admin/Admin.vue"
+import Funnels from "@/modules/funnels/Funnels.vue"
 import Leads from "@/modules/leads/Leads.vue"
 import Memos from "@/modules/memos/Memos.vue"
 import Email from "@/modules/email/Email.vue"
 import Friends from "@/modules/friends/Friends.vue"
 import Products from "@/modules/products/Products.vue"
 import Account from "@/modules/account/Account.vue"
-
+import Settings from "@/modules/settings/Settings.vue"
 
 export default {
   name: 'Dashboard',
@@ -35,12 +37,13 @@ export default {
     Memos,
     Adminbar,
     Statusbar,
-    Admin,
+    Funnels,
     Leads,
     Friends,
     Email,
     Products,
-    Account
+    Account,
+    Settings
   },
   computed: {
     activeModule() {

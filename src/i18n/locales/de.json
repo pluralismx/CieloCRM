@@ -29,5 +29,17 @@
     "emails": "E-Mails",
     "lists": "Listen",
     "agents": "Mitarbeiter"
+  },
+  "toolbar": {
+    "funnels": {
+      "createList": "Liste erstellen",
+      "showLists": "Listen anzeigen",
+      "showDetails": "Details anzeigen"
+    },
+    "leads": {
+      "createLead": "Lead erstellen",
+      "downloadExcel": "Excel herunterladen",
+      "dump": "Leads löschen"
+    }
   }
 }

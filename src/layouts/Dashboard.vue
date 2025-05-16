@@ -3,8 +3,11 @@
     <Navbar/>
     <section class="h-0 flex-1 flex flex-row">
       <Memos v-show="sidebar"/>
-      <div class="p-8 flex-1">
-        <component :is="activeModule" />
+      <div class="flex flex-col flex-1">
+        <Toolbar/>
+        <div class="p-8 flex flex-1">
+          <component :is="activeModule" />
+        </div>
       </div>
       <Adminbar/>
     </section>
@@ -29,10 +32,12 @@ import Friends from "@/modules/friends/Friends.vue"
 import Products from "@/modules/products/Products.vue"
 import Account from "@/modules/account/Account.vue"
 import Settings from "@/modules/settings/Settings.vue"
+import Toolbar from "@/components/Toolbar.vue";
 
 export default {
   name: 'Dashboard',
   components: {
+    Toolbar,
     Navbar,
     Memos,
     Adminbar,

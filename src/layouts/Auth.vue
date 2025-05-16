@@ -36,7 +36,7 @@ export default {
   data() {
     return {
       form: {
-        email: 'gerardotopete7@gmail.com',
+        email: 'gerardo@email.com',
         password: '12345678',
       },
       auth: useAuthStore()

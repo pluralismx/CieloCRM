@@ -28,5 +28,18 @@
     "emails": "Emails",
     "lists": "Lists",
     "agents": "Agents"
+  },
+  "toolbar": {
+    "funnels": {
+      "createList": "Create List",
+      "showLists": "Show Lists",
+      "showDetails": "Show Details"
+    },
+    "leads": {
+      "createLead": "Create lead",
+      "downloadExcel": "Download Excel",
+      "dump": "Dump"
+    }
   }
+
 }

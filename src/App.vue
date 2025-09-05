@@ -17,7 +17,7 @@
 import Auth from '@/layouts/Auth.vue'
 import Dashboard from '@/layouts/Dashboard.vue'
 import { useAuthStore } from '@/stores/auth.js'
-import { useListsStore } from '@/stores/lists.js'
+import { useDashboardStore } from '@/stores/dashboard.js'
 
 export default {
   name: 'App',
@@ -28,8 +28,8 @@ export default {
   data() {
     return {
       auth: useAuthStore(),
-      lists: useListsStore(),
-      isAppLoading: false
+      dashboard: useDashboardStore(),
+      isAppLoading: false,
     }
   },
   computed: {
@@ -40,7 +40,8 @@ export default {
   watch: {
     async isLoggedIn() {
         this.isAppLoading = true
-        await this.lists.fetchLists()
+        // Load Dashboard Data
+        await this.dashboard.fetchDashboardData()
         this.isAppLoading = false
     }
   },

@@ -1,7 +1,15 @@
 {
+  "common": {
+    "yes": "yes",
+    "no": "no",
+    "ok": "OK",
+    "accept": "accept",
+    "cancel": "cancel",
+    "save": "save"
+  },
   "login": {
     "email": "Email",
-    "error": "Error",
+    "error": "Invalid credentials",
     "password": "Password",
     "login": "Login"
   },
@@ -14,6 +22,7 @@
     "memos" : "Memos",
     "leads" : "Leads",
     "admin" : "Admin",
+    "email" : "E-mail",
     "logout": "Logout",
     "settings" : "Settings"
   },
@@ -31,15 +40,35 @@
   },
   "toolbar": {
     "funnels": {
+      "title": "Funnels",
       "createList": "Create List",
       "showLists": "Show Lists",
       "showDetails": "Show Details"
     },
     "leads": {
+      "title": "Leads",
       "createLead": "Create lead",
       "downloadExcel": "Download Excel",
       "dump": "Dump"
     }
+  },
+  "funnels": {
+    "createListModal" : {
+      "title": "Create new list or funnel",
+      "type":  "Tipo",
+      "funnel": "Funnel",
+      "list": "List",
+      "name": "Name",
+      "apiKey": "API Key",
+      "apiKeyPlaceholder": "Will be generated automatically",
+      "apiWarning": "Use this key in the forms on your website that you want to connect to your list. Do not share it with anyone and keep it in a safe place.",
+      "error": "Could not create list",
+      "success": "List created",
+      "loading": "Creating list..."
+    }
+  },
+  "memos": {
+    "memoTitle": "Titulo",
+    "memoContent": "Contenido"
   }
-
 }

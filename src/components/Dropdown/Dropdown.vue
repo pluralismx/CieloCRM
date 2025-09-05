@@ -1,5 +1,5 @@
 <template>
-  <div class="relative">
+  <div class="relative" ref="dropdown">
     <slot/>
   </div>
 </template>
@@ -8,7 +8,7 @@ export default {
   name: 'Dropdown',
   props: {
     modelValue: {
-      type: String,
+      type: [String, Number],
       required: false
     }
   },
@@ -17,6 +17,12 @@ export default {
       isOpen: false,
       label: ""
     }
+  },
+  mounted() {
+    document.addEventListener("click", this.handleClickOutside);
+  },
+  beforeUnmount() {
+    document.removeEventListener("click", this.handleClickOutside);
   },
   methods: {
     toggle() {
@@ -27,6 +33,11 @@ export default {
       this.label = label;
       this.isOpen = false;
       this.$emit('change', value);
+    },
+    handleClickOutside(event) {
+      if (this.$refs.dropdown && !this.$refs.dropdown.contains(event.target)) {
+        this.isOpen = false;
+      }
     }
   },
   provide() {

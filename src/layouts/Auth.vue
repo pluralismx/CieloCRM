@@ -1,30 +1,37 @@
 <template>
   <div class="flex items-center justify-center bg-primary h-[100dvh]">
     <!-- Login box -->
-    <div class="bg-shadows p-8 rounded-xl flex flex-col shadow-lg w-[300px]">
+    <div class="bg-shadows p-8 rounded-xl flex flex-col justify-between shadow-lg w-[300px] h-[410px]">
       <h1 class="text-basic text-center text-4xl mb-8">Cielo CRM</h1>
-      <div class="flex flex-col gap-2 mb-4">
-        <label class="text-basic">{{ $t('login.email')}}</label>
-        <input
-            v-model="form.email"
-            class="bg-basic rounded-sm p-2"
-        />
-        <span class="text-warn text-sm">{{ $t('login.error')}}</span>
+
+      <!-- Card body -->
+      <div class="flex-1">
+        <div class="flex flex-col gap-2 mb-4">
+          <label class="text-basic">{{ $t('login.email')}}</label>
+          <input
+              v-model="form.email"
+              class="bg-basic rounded-sm p-2"
+          />
+        </div>
+        <div class="flex flex-col gap-2 mb-10">
+          <label class="text-basic">{{ $t('login.password')}}</label>
+          <input
+              v-model="form.password"
+              class="bg-basic rounded-sm p-2"
+          />
+          <p v-show="loginError" class="text-warn text-sm text-center">{{ $t('login.error')}}</p>
+        </div>
       </div>
-      <div class="flex flex-col gap-2 mb-10">
-        <label class="text-basic">{{ $t('login.password')}}</label>
-        <input
-            v-model="form.password"
-            class="bg-basic rounded-sm p-2"
-        />
-        <span class="text-warn text-sm">{{ $t('login.error')}}</span>
+
+      <!-- Card footer -->
+      <div class="flex ">
+        <button
+            @click="handleLogin"
+            class="bg-primary p-2 rounded-sm text-basic hover:cursor-pointer w-full"
+        >
+          {{ $t('login.login') }}
+        </button>
       </div>
-      <button
-          @click="handleLogin"
-          class="bg-primary p-2 rounded-sm text-basic hover:cursor-pointer"
-      >
-        {{ $t('login.login') }}
-      </button>
     </div>
   </div>
 </template>
@@ -39,17 +46,21 @@ export default {
         email: 'gerardo@email.com',
         password: '12345678',
       },
+      loginError: false,
       auth: useAuthStore()
     }
   },
   methods: {
     async handleLogin() {
       try {
-        await this.auth.login(this.form)
+        const response = await this.auth.login(this.form)
+        if(!response){
+          this.loginError = true;
+        }
       } catch (error) {
         console.log(error)
       }
-    }
+    },
   }
 }
 </script>

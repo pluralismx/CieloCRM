@@ -1,7 +1,15 @@
 {
+  "common": {
+    "yes": "ja",
+    "no": "nein",
+    "ok": "OK",
+    "accept": "akzeptieren",
+    "cancel": "abbrechen",
+    "save": "Speichern"
+  },
   "login": {
     "email": "E-Mail",
-    "error": "Fehler",
+    "error": "Ungültige Anmeldedaten",
     "password": "Passwort",
     "login": "Anmelden"
   },
@@ -32,14 +40,36 @@
   },
   "toolbar": {
     "funnels": {
+      "title": "Trichter",
       "createList": "Liste erstellen",
       "showLists": "Listen anzeigen",
       "showDetails": "Details anzeigen"
     },
     "leads": {
+      "title": "Leads",
       "createLead": "Lead erstellen",
       "downloadExcel": "Excel herunterladen",
       "dump": "Leads löschen"
     }
+  },
+  "funnels": {
+    "createListModal" : {
+      "title": "Neue Liste oder Funnel erstellen",
+      "type":  "Typ",
+      "funnel": "Trichter",
+      "list": "Liste",
+      "name": "Name",
+      "apiKey": "API-Schlüssel",
+      "apiKeyPlaceholder": "Wird automatisch generiert",
+      "apiWarning": "Verwende diesen Schlüssel in den Formularen deiner Website, die du mit deiner Liste verbinden möchtest. Teile ihn mit niemandem und bewahre ihn an einem sicheren Ort auf.",
+      "error": "Liste konnte nicht erstellt werden",
+      "success": "Die Liste wurde erstellt",
+      "loading": "Bitte warten..."
+    }
+  },
+  "memos": {
+    "memoTitle": "Titel",
+    "memoContent": "Inhalt"
   }
+
 }

@@ -4,17 +4,17 @@
     <ul class="flex items-center gap-8 w-1/2">
       <li class="hover:cursor-pointer flex items-center gap-2">
         {{ $t('navbar.list') }}
-        <Dropdown v-model="selected" @change="miMetodo">
+        <Dropdown v-model="selected" @change="handleSelectList()">
           <DropdownTrigger
             class="w-[250px] bg-basic justify-between rounded-md p-2 text-primary"
           />
           <DropdownOptions class="bg-white w-full rounded-b-md shadow-md">
             <DropdownItem
-                v-for="item in listsStore.lists"
+                v-for="item in dashboardStore.lists"
                 :key="item.id"
                 :value="item.id"
                 :label="item.name"
-                class="text-primary p-2 hover:cursor-pointer hover:bg-silver"
+                class="text-primary p-2 hover:cursor-pointer hover:bg-basic"
             />
           </DropdownOptions>
         </Dropdown>
@@ -39,7 +39,7 @@
 
   // Stores
   import { useAuthStore } from '@/stores/auth'
-  import { useListsStore } from "@/stores/lists.js";
+  import { useDashboardStore } from "@/stores/dashboard.js";
   import { useLayoutStore } from "@/stores/layout.js";
 
   // UI
@@ -54,7 +54,7 @@
     data() {
       return {
         auth: useAuthStore(),
-        listsStore: useListsStore(),
+        dashboardStore: useDashboardStore(),
         layoutStore: useLayoutStore(),
         selected: null,
       }
@@ -67,8 +67,9 @@
           console.log(error)
         }
       },
-      miMetodo () {
-        alert(this.selected)
+      handleSelectList () {
+        console.log('User selected a website', this.selected);
+        this.dashboardStore.fetchListData(this.selected);
       }
     }
   }

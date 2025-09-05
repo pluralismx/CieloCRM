@@ -1,8 +1,8 @@
 <template>
-  <div class="bg-basic shadow-lg rounded-md">
+  <div class="bg-basic">
     <table class="w-full">
       <thead>
-      <tr class="border-b border-warn">
+      <tr class="border-b border-primary">
         <th class="w-[5%]">S</th>
         <th class="w-[5%] p-2">Embudo</th>
         <th class="w-[20%] p-2">Nombre</th>

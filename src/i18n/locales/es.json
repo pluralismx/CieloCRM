@@ -1,7 +1,15 @@
 {
+  "common": {
+    "yes": "sí",
+    "no": "no",
+    "ok": "OK",
+    "accept": "aceptar",
+    "cancel": "cancelar",
+    "save": "guardar"
+  },
   "login" : {
     "email" : "Correo electrónico",
-    "error" : "Error",
+    "error" : "Credenciales inválidas",
     "password" : "Contraseña",
     "login" : "Iniciar sesión"
   },
@@ -31,14 +39,35 @@
   },
   "toolbar" : {
     "funnels": {
+      "title": "Funnels",
       "createList": "Crear lista",
       "showLists": "Mostrar listas",
       "showDetails": "Mostrar detalles"
     },
     "leads": {
+      "title": "Leads",
       "createLead": "Crear lead",
       "downloadExcel": "Descargar Excel",
       "dump": "Vaciar"
     }
+  },
+  "funnels": {
+    "createListModal" : {
+      "title": "Crear nueva lista o embudo",
+      "type":  "Tipo",
+      "funnel": "Embudo",
+      "list": "Lista",
+      "name": "Nombre",
+      "apiKey": "Clave API",
+      "apiKeyPlaceholder": "Será generada automáticamente",
+      "apiWarning": "Utiliza esta clave en los formularios de tu sitio web que quieras conectar a tu lista. No la compartas con nadie y tenla en un lugar seguro",
+      "error": "No se pudo crear la lista",
+      "success": "Se creó la lista",
+      "loading": "Creando lista.."
+    }
+  },
+  "memos": {
+    "memoTitle": "Titulo",
+    "memoContent": "Contenido"
   }
 }

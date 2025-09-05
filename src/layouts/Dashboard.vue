@@ -3,7 +3,7 @@
     <Navbar/>
     <section class="h-0 flex-1 flex flex-row">
       <Memos v-show="sidebar"/>
-      <div class="flex flex-col flex-1">
+      <div class="flex flex-col flex-1 mx-8 mt-8 shadow-2xl">
         <Toolbar/>
         <div class="p-8 flex flex-1">
           <component :is="activeModule" />

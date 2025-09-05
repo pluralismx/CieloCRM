@@ -1,5 +1,5 @@
 <template>
-  <ul :class="['absolute', $attrs.class]">
+  <ul :class="['absolute overflow-hidden', $attrs.class]">
     <slot/>
   </ul>
 </template>

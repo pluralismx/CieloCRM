@@ -5,7 +5,7 @@ export const useLayoutStore = defineStore('layout', {
   state: () => ({
     activeModule: "leads",
     isSideBarOpen: true,
-    toolbarOptions: {},
+    toolbarOptions: [],
     openedTools: {
       funnels: [],
       leads: [],

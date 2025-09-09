@@ -13,22 +13,38 @@
   </div>
 </template>
 <script>
-import { useLayoutStore } from "@/stores/layout.js"
-import {Wrench} from "lucide-vue-next";
+import { useLayoutStore } from "@/stores/layout.js";
+import { Wrench } from "lucide-vue-next";
+
 export default {
   name: 'Toolbar',
-  components: {Wrench},
+  components: { Wrench },
+
+  data() {
+    return {
+      layoutStore: useLayoutStore(), // important to store in data or created hook
+    };
+  },
+
   computed: {
-    layoutStore() {
-      return useLayoutStore();
-    },
     toolbarOptions() {
       return this.layoutStore.toolbarOptions;
     }
   },
-  mounted() {
-    console.log("toolbarOptions (mounted):", this.toolbarOptions);
-  }
 
-}
+  mounted() {
+    console.log("🛠 layoutStore:", this.layoutStore);
+    console.log("📦 toolbarOptions (mounted):", this.toolbarOptions);
+  },
+
+  watch: {
+    toolbarOptions: {
+      handler(newVal) {
+        console.log("🔄 toolbarOptions changed:", newVal);
+      },
+      deep: true,
+      immediate: true
+    }
+  }
+};
 </script>

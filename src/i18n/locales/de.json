@@ -50,6 +50,33 @@
       "createLead": "Lead erstellen",
       "downloadExcel": "Excel herunterladen",
       "dump": "Leads löschen"
+    },
+    "email": {
+      "title": "Email",
+      "settings": "Einstellungen",
+      "preview": "Vorschau",
+      "templates": "Vorlagen",
+      "recipients": "Empfänger"
+    },
+    "friends": {
+      "title": "Freunde",
+      "invite": "Einladen",
+      "myFriends": "Meine Freunde",
+      "inbox": "Inbox"
+    },
+    "products": {
+      "title": "Produkte",
+      "myProducts": "Meine Produkte",
+      "createProduct": "Produkt erstellen"
+    },
+    "account": {
+      "title": "Konto",
+      "profile": "Perfil",
+      "myAccount": "Mi cuenta",
+      "suscription": "Subscripción"
+    },
+    "settings": {
+      "title": "Einstellungen"
     }
   },
   "funnels": {

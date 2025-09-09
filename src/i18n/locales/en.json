@@ -50,6 +50,33 @@
       "createLead": "Create lead",
       "downloadExcel": "Download Excel",
       "dump": "Dump"
+    },
+    "email": {
+      "title": "Email",
+      "settings": "Settings",
+      "preview": "Preview",
+      "templates": "Templates",
+      "recipients": "Recipients"
+    },
+    "friends": {
+      "title": "Friends",
+      "invite": "Invite",
+      "myFriends": "My Friends",
+      "inbox": "Inbox"
+    },
+    "products": {
+      "title": "Products",
+      "myProducts": "My Products",
+      "createProduct": "Create Product"
+    },
+    "account": {
+      "title": "Account",
+      "profile": "Profile",
+      "myAccount": "My Account",
+      "suscription": "Subscription"
+    },
+    "settings": {
+      "title": "Settings"
     }
   },
   "funnels": {

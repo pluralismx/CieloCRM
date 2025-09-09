@@ -12,21 +12,24 @@ export const useDashboardStore = defineStore('dashboard', {
   actions: {
     // Dashboard
     async fetchDashboardData(){
-      await this.fetchLists();
+      const lists = await this.fetchLists();
+      if(!lists){
+        return
+      }
       await this.fetchListData();
+    },
+
+    async fetchLists(){
+      const response = await ListService.fetchLists();
+      if(!response){
+        return false;
+      }
+      this.lists = response.lead_lists;
     },
 
     async fetchListData(id = this.lists[0].id){
       this.selectedList = id;
       await this.loadMemos(id);
-    },
-
-    async fetchLists(){
-      const response = await ListService.fetchLists();
-      if(response.status !== 'success'){
-        return false;
-      }
-      this.lists = response.lead_lists;
     },
 
     async createList(form){

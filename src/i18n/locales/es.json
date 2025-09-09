@@ -49,7 +49,35 @@
       "createLead": "Crear lead",
       "downloadExcel": "Descargar Excel",
       "dump": "Vaciar"
+    },
+    "email": {
+      "title": "Email",
+      "settings": "Configuración",
+      "preview": "Vista previa",
+      "templates": "Plantillas",
+      "recipients": "Destinatarios"
+    },
+    "friends": {
+      "title": "Amigos",
+      "invite": "Invitar",
+      "myFriends": "Mis amigos",
+      "inbox": "Bandeja"
+    },
+    "products": {
+      "title": "Productos",
+      "myProducts": "Mis productos",
+      "createProduct": "Crear Producto"
+    },
+    "account": {
+      "title": "Cuenta",
+      "profile": "Perfil",
+      "myAccount": "Mi cuenta",
+      "suscription": "Subscripción" 
+    },
+    "settings": {
+      "title": "Ajustes"
     }
+    
   },
   "funnels": {
     "createListModal" : {

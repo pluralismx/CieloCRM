@@ -1,8 +1,27 @@
 <template>
-  <p>Leads</p>
+
+    <div class="flex flex-col gap-8 grow">
+      <component
+          v-for="tool in layoutStore.openedTools['leads']"
+          :key="tool"
+          :is="tools['leads'][tool]"
+      />
+    </div>
+
 </template>
 <script>
+import { useLayoutStore } from "@/stores/layout.js";
+import { ToolRegistry } from "@/utils/toolRegistry.js"
+
 export default {
-  name: 'Leads'
+  name: 'Leads',
+  computed: {
+    layoutStore() {
+      return useLayoutStore();
+    },
+    tools() {
+      return ToolRegistry
+    }
+  }
 }
 </script>

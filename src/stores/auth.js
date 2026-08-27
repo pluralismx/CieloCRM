@@ -1,14 +1,28 @@
 import { defineStore } from 'pinia'
 import { api } from '@/lib/axios.js'
 
+// Flip to false when the API login is available again.
+const SKIP_AUTH = true
+const mockUser = {
+  id: 1,
+  name: 'Preview User',
+  email: 'gerardo@email.com',
+}
+
 export const useAuthStore = defineStore('auth', {
   state: () => ({
-    user: null,
-    token: localStorage.getItem('access_token') || null,
+    user: SKIP_AUTH ? mockUser : null,
+    token: SKIP_AUTH ? 'ui-preview' : (localStorage.getItem('access_token') || null),
   }),
 
   actions: {
     async login(credentials) {
+      if (SKIP_AUTH) {
+        this.user = mockUser
+        this.token = 'ui-preview'
+        return { data: { status: 'success', user: mockUser } }
+      }
+
       try {
         const response = await api.post('login', credentials)
         if (response.data.status === 'success') {
@@ -25,6 +39,12 @@ export const useAuthStore = defineStore('auth', {
     },
 
     async logout() {
+      if (SKIP_AUTH) {
+        this.user = null
+        this.token = null
+        return
+      }
+
       try {
         await api.post('logout')
         localStorage.removeItem('access_token')
